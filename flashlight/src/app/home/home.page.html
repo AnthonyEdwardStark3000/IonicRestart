@@ -1,0 +1,33 @@
+<ion-content padding>
+  <ng-container *ngIf="isLighton; else isOff">
+    <div class="row__center">
+      <div class="text-center" (click)="lightOff()">
+        <img src="assets/light_circle.png" alt="">
+        <!-- <img src="assets/light_circle.png" alt=""> -->
+         <!-- fab placed to the (vertical) center and center -->
+         <ion-fab vertical="center" horizontal="center" slot="fixed">
+          <ion-fab-button class="light__icon">
+            <!-- <ion-icon name="share"></ion-icon> -->
+            <ion-icon name="flashlight-outline" class="light__icon"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+      </div>
+    </div>
+  </ng-container>
+
+  <ng-template #isOff>
+    <div class="row__center">
+      <div class="text-center" (click)="lightOn()">
+        <img src="assets/dark_circle.png" alt="">
+        <!-- <img src="assets/light_circle.png" alt=""> -->
+         <!-- fab placed to the (vertical) center and center -->
+         <ion-fab vertical="center" horizontal="center" slot="fixed">
+          <ion-fab-button>
+            <ion-icon name="flashlight-outline" class="dark__icon"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+      </div>
+    </div>
+  </ng-template>
+
+</ion-content>
