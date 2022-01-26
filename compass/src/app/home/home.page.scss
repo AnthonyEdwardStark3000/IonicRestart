@@ -1,23 +1,21 @@
-ion-header
-{
+ion-header{
   ion-title
   {
     margin: 0 auto;
     text-align: center;
-    color:black;
-    font-size:30px;
-    margin: top 20px;
+    font-size: 30px;
+    font-weight: bold;
   }
 }
 ion-content
 {
   img{
-    position: absolute;
-    max-width: 250px;
-    max-height: 250px;
-    left:0;
-    right:0;
-    margin: 0 auto;
-    top:30%;
+position: absolute;
+max-width: 250;
+max-height: 250;
+left: 0;
+right: 0;
+margin: 0 auto;
+top: 30%;
   }
 }
