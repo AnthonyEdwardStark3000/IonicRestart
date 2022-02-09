@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { IonicModule } from '@ionic/angular';
 import { FormsModule } from '@angular/forms';
 import { HomePage } from './home.page';
-import {CoordinatesModule} from 'angular-coordinates';
+// import {CoordinatesModule} from 'angular-coordinates';
 
 import { HomePageRoutingModule } from './home-routing.module';
 
@@ -14,8 +14,8 @@ import { HomePageRoutingModule } from './home-routing.module';
     FormsModule,
     IonicModule,
     HomePageRoutingModule,
-    CoordinatesModule,
+    // CoordinatesModule,
   ],
-  declarations: [HomePage]
+  // declarations: [HomePage]
 })
 export class HomePageModule {}

@@ -1,0 +1,7 @@
+{
+  "name": "mirror",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
