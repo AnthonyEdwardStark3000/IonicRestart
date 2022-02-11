@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "todo-59521": {
+      "hosting": {
+        "app": [
+          "todo-59521"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "todo-59521"
+  }
+}

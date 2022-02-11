@@ -59,6 +59,6 @@ onChange(event)
 {
   console.log(event);
   this.setBrightness = event.detail.value;
-  this.brightness.setBrightness(this.setBrightness)
+  this.brightness.setBrightness(this.setBrightness);
 }
 }
