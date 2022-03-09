@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { Brightness } from '@ionic-native/brightness/ngx';
+import { CameraPreview, CameraPreviewOptions } from '@ionic-native/camera-preview/ngx';
 
 
 @Component({
@@ -16,7 +17,18 @@ export class HomePage implements OnInit{
   frameOne = true;
   frameTwo = true;
   frameThree = true;
-  constructor(private platform: Platform, private brightness: Brightness)
+
+  cameraPreviewOptions: CameraPreviewOptions = {
+    x: 0,
+    y: 0,
+    width: window.screen.width,
+    height: window.screen.height,
+    camera: this.cameraPreview.CAMERA_DIRECTION.FRONT,
+    tapPhoto: false,
+    toBack: true
+  };
+
+  constructor(private platform: Platform, private brightness: Brightness, private cameraPreview: CameraPreview  )
   {
 
   }
@@ -25,7 +37,7 @@ export class HomePage implements OnInit{
      //Reading the screen width and height
     //  console.log(window.screen.width);
     //  console.log(window.screen.height);
-
+     this.cameraPreview.startCamera(this.cameraPreviewOptions).then((res)=> console.log(res)).catch(err => console.log(err));
      this.screenWidth = window.outerWidth; //another method to read screen width
      this.screenHeight = window.outerHeight; //another method to read screen height: ;
     //  this.brightness.setBrightness(0.5)
