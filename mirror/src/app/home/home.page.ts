@@ -14,6 +14,7 @@ export class HomePage implements OnInit{
   screenHeight: number;
   screenBrightness: number;
   setBrightness: number;
+  setZoom: number;
   frameOne = true;
   frameTwo = true;
   frameThree = true;
@@ -33,7 +34,7 @@ export class HomePage implements OnInit{
 
   }
   ngOnInit(): void {
-   this.platform.ready().then(()=> {
+   this.platform.ready().then(async ()=> {
      //Reading the screen width and height
     //  console.log(window.screen.width);
     //  console.log(window.screen.height);
@@ -41,6 +42,7 @@ export class HomePage implements OnInit{
      this.screenWidth = window.outerWidth; //another method to read screen width
      this.screenHeight = window.outerHeight; //another method to read screen height: ;
     //  this.brightness.setBrightness(0.5)
+    this.setZoom = await this.cameraPreview.setZoom(2);
    });
   }
   changeFrame()
@@ -67,6 +69,20 @@ export class HomePage implements OnInit{
       return;
     }
   }
+
+zoomIn(){
+  this.setZoom += 10;
+  this.cameraPreview.setZoom(this.setZoom);
+}
+
+zoomOut(){
+  this.setZoom -=10;
+  if(this.setZoom >=0){
+    this.cameraPreview.setZoom(this.setZoom);
+  }
+}
+
+
 onChange(event)
 {
   console.log(event);
